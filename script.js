@@ -11,8 +11,12 @@ function writePassword() {
 
 function generatePassword() {
   // TODO: Write the code that asks the user about the parameters for their password
-  
-  prompt("Please choose a password length.")
+
+  var passlength = prompt("Please choose a password length.");
+  var passlower = prompt("Include lowercase characters?");
+  var passupper = prompt("Include uppercase characters?");
+  var passnumeric = prompt("Include numeric characters?");
+  var passspec = prompt("Include special characters?");
 
   // TODO: use those parameters to generate a new password
   // TODO: return that password
