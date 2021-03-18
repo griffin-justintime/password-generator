@@ -11,6 +11,9 @@ function writePassword() {
 
 function generatePassword() {
   // TODO: Write the code that asks the user about the parameters for their password
+  
+  prompt("Please choose a password length.")
+
   // TODO: use those parameters to generate a new password
   // TODO: return that password
 }
