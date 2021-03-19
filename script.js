@@ -96,16 +96,16 @@ function writePassword() {
   passwordText.value = password;
 }
 function userOptions() {
-  var passlength = parseInt(window.prompt("Please choose a password length."));
+  var passlength = prompt("Please choose a password length."));
   // console.log(typeof passlength);
-  if (passlength < 8) {
+  if (passlength < 8 || passlength > 128) {
     window.alert("Password must be at least 8 characters.");
   }
 
-  var passlower = window.confirm("Include lowercase characters?");
-  var passupper = window.confirm("Include uppercase characters?");
-  var passnumeric = window.confirm("Include numeric characters?");
-  var passspec = window.confirm("Include special characters?");
+  var passlower = confirm("Include lowercase characters?");
+  var passupper = confirm("Include uppercase characters?");
+  var passnumeric = confirm("Include numeric characters?");
+  var passspec = confirm("Include special characters?");
   var options = {
     passlower: passlower,
     passlength: passlength,
