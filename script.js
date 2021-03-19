@@ -96,23 +96,29 @@ function writePassword() {
   passwordText.value = password;
 }
 function userOptions() {
-  var passlength = prompt("Please choose a password length."));
-  // console.log(typeof passlength);
-  if (passlength < 8 || passlength > 128) {
+
+  var passLength = prompt("Please choose a password length.");
+  if (passLength < 8 || passLength > 128) {
     window.alert("Password must be at least 8 characters.");
   }
 
-  var passlower = confirm("Include lowercase characters?");
-  var passupper = confirm("Include uppercase characters?");
+  var passLower = confirm("Include lowercase characters?");
+  if (passLower) {
+    userOptions = 
+  }
+
+
+  var passUpper = confirm("Include uppercase characters?");
+if (passUpper)
+
   var passnumeric = confirm("Include numeric characters?");
   var passspec = confirm("Include special characters?");
   var options = {
     passlower: passlower,
     passlength: passlength,
   };
-  console.log(options.passlength);
+  
 
-  return options;
 }
 function randomValue(arr) {
   var randomIndex = Math.floor(Math.random() * arr.length);
