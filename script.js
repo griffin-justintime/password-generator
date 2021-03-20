@@ -98,7 +98,7 @@ function writePassword() {
 
 function generatePassword() {
   var userOptions = [];
-  var generatedPassword = '';
+  var generatedPassword = "";
 
   var passLength = prompt("Please choose a password length.");
   if (passLength < 8 || passLength > 128) {
@@ -114,16 +114,17 @@ function generatePassword() {
   var passUpper = confirm("Include uppercase characters?");
   if (passUpper) {
     userOptions = userOptions.concat(upperCase);
-
-    // if (userOptions.length === 0) {
-    //   window.alert ("Guess you don't want a password.")
-    //   return;
-    // }
   }
 
-  // var passNumeric = confirm("Include numeric characters?");
+  var passNumeric = confirm("Include numeric characters?");
+  if (passUpper) {
+    userOptions = userOptions.concat(numbers);
+  }
 
-  //   var passSpec = confirm("Include special characters?");
+  var passSpec = confirm("Include special characters?");
+  if (passSpec) {
+    userOptions = userOptions.concat(specChar);
+  }
 
   for (var i = 0; i < passLength; i++) {
     var randOptions = Math.floor(Math.random() * userOptions.length);
