@@ -1,5 +1,5 @@
-// Assignment Code
 var generateBtn = document.querySelector("#generate");
+// Password character arrays
 var lowerCase = [
   "a",
   "b",
@@ -88,7 +88,7 @@ var specChar = [
   ".",
   "/",
 ];
-// Write password to the #password input
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -99,8 +99,9 @@ function writePassword() {
 function generatePassword() {
   var userOptions = [];
   var generatedPassword = "";
-
+  // Password Parameters
   var passLength = prompt("Please choose a password length.");
+
   if (passLength < 8 || passLength > 128) {
     window.alert("Password must be at least 8 characters.");
     return generatePassword();
@@ -129,11 +130,11 @@ function generatePassword() {
   for (var i = 0; i < passLength; i++) {
     var randOptions = Math.floor(Math.random() * userOptions.length);
     var randPass = userOptions[randOptions];
-    generatedPassword += randPass
+    generatedPassword += randPass;
   }
 
   return generatedPassword;
 }
 
-// Add event listener to generate button
+// Event listener to generate button
 generateBtn.addEventListener("click", writePassword);
