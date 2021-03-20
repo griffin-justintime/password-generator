@@ -58,7 +58,7 @@ var upperCase = [
   "Z",
 ];
 
-var numChar = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 var specChar = [
   "`",
   "!",
@@ -98,6 +98,7 @@ function writePassword() {
 
 function generatePassword() {
   var userOptions = [];
+  var generatedPassword = '';
 
   var passLength = prompt("Please choose a password length.");
   if (passLength < 8 || passLength > 128) {
@@ -110,8 +111,15 @@ function generatePassword() {
     userOptions = userOptions.concat(lowerCase);
   }
 
-  //   var passUpper = confirm("Include uppercase characters?");
-  // if (passUpper)
+  var passUpper = confirm("Include uppercase characters?");
+  if (passUpper) {
+    userOptions = userOptions.concat(upperCase);
+
+    // if (userOptions.length === 0) {
+    //   window.alert ("Guess you don't want a password.")
+    //   return;
+    // }
+  }
 
   // var passNumeric = confirm("Include numeric characters?");
 
