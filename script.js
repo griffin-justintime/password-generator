@@ -58,7 +58,7 @@ var upperCase = [
   "Z",
 ];
 
-var nuNumeric = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+var numChar = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 var specChar = [
   "`",
   "!",
@@ -95,7 +95,10 @@ function writePassword() {
 
   passwordText.value = password;
 }
-function userOptions() {
+
+function generatePassword() {
+  var generatedPassword = "";
+  var userOptions = "";
 
   var passLength = prompt("Please choose a password length.");
   if (passLength < 8 || passLength > 128) {
@@ -104,38 +107,28 @@ function userOptions() {
 
   var passLower = confirm("Include lowercase characters?");
   if (passLower) {
-    userOptions += (passLower);
+    userOptions = userOptions.concat(lowerCase);
   }
 
+  //   var passUpper = confirm("Include uppercase characters?");
+  // if (passUpper)
 
-  var passUpper = confirm("Include uppercase characters?");
-if (passUpper)
+  // var passNumeric = confirm("Include numeric characters?");
 
-  var passnumeric = confirm("Include numeric characters?");
-  var passspec = confirm("Include special characters?");
-  var options = {
-    passlower: passlower,
-    passlength: passlength,
-  };
-  
+  //   var passSpec = confirm("Include special characters?");
 
-}
-for (var i = 0; i < passLength; i++) {
-  
-  var randomIndex = Math.floor(Math.random() * userOptions.length);
-  var value = arr[randomIndex];
+var writePassword = function () {
+  for (var i = 0; i < passLength; i++) {
+    generatedPassword = Math.floor(Math.random() * userOptions.length);
+  }
 
-}
-function generatePassword() {
   // TODO: Write the code that asks the user about the parameters for their password
-  var generatedPassword = [];
-  var userOptions = userOptions();
-  }
+
   // TODO: use those parameters to generate a new password
 
   // TODO: return that password
   return generatedPassword;
-}
+};
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword)
