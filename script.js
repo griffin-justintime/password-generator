@@ -97,8 +97,7 @@ function writePassword() {
 }
 
 function generatePassword() {
-  var generatedPassword = "";
-  var userOptions = "";
+  var userOptions = [];
 
   var passLength = prompt("Please choose a password length.");
   if (passLength < 8 || passLength > 128) {
@@ -117,18 +116,13 @@ function generatePassword() {
 
   //   var passSpec = confirm("Include special characters?");
 
-var writePassword = function () {
   for (var i = 0; i < passLength; i++) {
-    generatedPassword = Math.floor(Math.random() * userOptions.length);
+    var randOptions = Math.floor(Math.random() * userOptions.length);
+    var generatedPassword = userOptions[randOptions];
   }
 
-  // TODO: Write the code that asks the user about the parameters for their password
-
-  // TODO: use those parameters to generate a new password
-
-  // TODO: return that password
   return generatedPassword;
-};
+}
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword)
+generateBtn.addEventListener("click", writePassword);
