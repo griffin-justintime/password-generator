@@ -128,7 +128,8 @@ function generatePassword() {
 
   for (var i = 0; i < passLength; i++) {
     var randOptions = Math.floor(Math.random() * userOptions.length);
-    var generatedPassword = userOptions[randOptions];
+    var randPass = userOptions[randOptions];
+    generatedPassword += randPass
   }
 
   return generatedPassword;
