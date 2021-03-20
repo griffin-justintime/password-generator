@@ -104,7 +104,7 @@ function userOptions() {
 
   var passLower = confirm("Include lowercase characters?");
   if (passLower) {
-    userOptions = 
+    userOptions += (passLower);
   }
 
 
@@ -120,22 +120,21 @@ if (passUpper)
   
 
 }
-function randomValue(arr) {
-  var randomIndex = Math.floor(Math.random() * arr.length);
+for (var i = 0; i < passLength; i++) {
+  
+  var randomIndex = Math.floor(Math.random() * userOptions.length);
   var value = arr[randomIndex];
-  return value;
+
 }
 function generatePassword() {
   // TODO: Write the code that asks the user about the parameters for their password
   var generatedPassword = [];
   var userOptions = userOptions();
-  if (userOptions.passlower) {
-    // I need to use array method concat
-    generatedPassword.push(randomValue(lowercaseArray));
   }
   // TODO: use those parameters to generate a new password
 
   // TODO: return that password
+  return generatedPassword;
 }
 
 // Add event listener to generate button
