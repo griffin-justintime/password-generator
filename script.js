@@ -102,6 +102,7 @@ function generatePassword() {
   var passLength = prompt("Please choose a password length.");
   if (passLength < 8 || passLength > 128) {
     window.alert("Password must be at least 8 characters.");
+    return generatePassword();
   }
 
   var passLower = confirm("Include lowercase characters?");
